@@ -1,0 +1,35 @@
+{
+  "status": "PASSED",
+  "timestamp": "2026-11-10 21:23:41",
+  "hardware": {
+    "device": "NVIDIA GeForce RTX 2050",
+    "total_vram_mb": 4095.5,
+    "peak_vram_allocated_mb": 227.07,
+    "vram_headroom_mb": 3868.43,
+    "vram_headroom_percent": 94.46
+  },
+  "pipeline_components_verified": {
+    "dataloader": true,
+    "forward_pass": true,
+    "loss_calculation": true,
+    "backward_autograd": true,
+    "optimizer_step": true,
+    "validation_engine": true,
+    "checkpoint_generation": true
+  },
+  "hyperparameters_tested": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "batch_size": 1,
+    "epochs": 1,
+    "amp": true,
+    "workers": 0,
+    "device": "cuda:0"
+  },
+  "checkpoint_created": {
+    "path": "C:/Users/Darshan B/.gemini/antigravity/scratch/encrowatch-ai/experiments/smoke_tests/smoke_test_run/weights/last.pt",
+    "size_mb": 5.25,
+    "exists": true
+  },
+  "academic_disclaimer": "This run verified software and GPU pipeline execution using synthetic test data. Zero research metrics or accuracy values were reported from this test."
+}

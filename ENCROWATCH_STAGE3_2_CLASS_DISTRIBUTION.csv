@@ -1,0 +1,9 @@
+class_id,class_name,verified_legacy_instances,pilot_trial_instances,synthetic_fixture_instances,tier1_field_target_instances,imbalance_risk
+0,motorcycle,0,3,4,120,HIGH_IF_TRAINED_NOW
+1,car,0,1,4,100,HIGH_IF_TRAINED_NOW
+2,vendor_cart,0,3,4,80,SEVERE_STARVATION
+3,construction_debris,0,2,4,60,SEVERE_STARVATION
+4,commercial_signboard,0,2,4,80,HIGH_IF_TRAINED_NOW
+5,shop_extension,0,1,4,75,SEVERE_STARVATION
+6,umbrella_canopy,0,1,4,60,SEVERE_STARVATION
+7,pedestrian,0,2,4,150,REFERENCE_CLASS

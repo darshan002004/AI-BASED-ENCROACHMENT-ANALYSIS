@@ -1,0 +1,16 @@
+# EncroWatch AI - Disposable Synthetic Training Fixture
+# FOR GPU SMOKE TEST & PIPELINE VERIFICATION ONLY
+# NOT FOR RESEARCH RESULTS OR MANUSCRIPT BENCHMARKS
+path: C:/Users/Darshan B/.gemini/antigravity/scratch/encrowatch-ai/dataset/fixtures/synthetic_smoke_test
+train: images/train
+val: images/val
+
+names:
+  0: motorcycle
+  1: car
+  2: vendor_cart
+  3: construction_debris
+  4: commercial_signboard
+  5: shop_extension
+  6: umbrella_canopy
+  7: pedestrian

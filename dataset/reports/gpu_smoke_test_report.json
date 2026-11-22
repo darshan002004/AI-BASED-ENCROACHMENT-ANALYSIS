@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-11-10 20:59:19",
+  "environment": {
+    "python_executable": "C:\\Users\\Darshan B\\.gemini\\antigravity\\scratch\\encrowatch-ai\\.venv\\Scripts\\python.exe",
+    "python_version": "3.12.10",
+    "torch_version": "2.6.0+cu124",
+    "torchvision_version": "0.21.0+cu124",
+    "ultralytics_version": "8.4.208",
+    "scipy_version": "1.18.1",
+    "sklearn_version": "1.9.1",
+    "torch_cuda_available": true
+  },
+  "cuda_hardware_test": {
+    "cuda_available": true,
+    "device_name": "NVIDIA GeForce RTX 2050",
+    "total_vram_mb": 4095.5,
+    "cuda_version_torch": "12.4",
+    "tensor_computation_success": true,
+    "peak_tensor_vram_mb": 44.12
+  },
+  "gpu_inference_smoke_test": {
+    "model": "yolo11n.pt",
+    "device": "cuda:0",
+    "half_precision_fp16": true,
+    "imgsz": 640,
+    "batch_size": 1,
+    "inference_latency_ms": 179.15,
+    "peak_vram_mb": 21.97,
+    "detections_count": 0,
+    "detected_classes": [],
+    "status": "PASSED"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "task_id": "PILOT_05",
+  "image_filename": "privacy_test_real_privacy.jpg",
+  "image_path": "backend/uploads/privacy/privacy_test_real_privacy.jpg",
+  "resolution": {
+    "width": 400,
+    "height": 300
+  },
+  "scene_cluster": "SCENE_PRIVACY_TEST",
+  "split": "test",
+  "assigned_ward": "Ward 4 (BTM Corridor - Quarantined)",
+  "required_annotation_steps": [
+    {
+      "step": 1,
+      "target": "2D Object Bounding Boxes",
+      "format": "YOLO darknet normalized [class_id x_center y_center width height]",
+      "classes_allowed": [
+        "motorcycle",
+        "car",
+        "vendor_cart",
+        "construction_debris",
+        "commercial_signboard",
+        "shop_extension",
+        "umbrella_canopy",
+        "pedestrian"
+      ],
+      "guideline": "Fit tightly with <= 5px padding; omit objects occluded > 70%"
+    },
+    {
+      "step": 2,
+      "target": "Footpath Corridor Polygon (P_FP)",
+      "format": "Closed polygon (n >= 4 normalized coordinates [u, v])",
+      "guideline": "Delineate continuous pedestrian sidewalk corridor"
+    },
+    {
+      "step": 3,
+      "target": "Roadway Carriageway Polygon (P_RD)",
+      "format": "Closed polygon (n >= 4 normalized coordinates [u, v])",
+      "guideline": "Delineate active vehicular asphalt surface"
+    },
+    {
+      "step": 4,
+      "target": "Curb Boundary Ribbon (C)",
+      "format": "Polyline or narrow polygon",
+      "guideline": "Boundary separating sidewalk from roadway"
+    },
+    {
+      "step": 5,
+      "target": "Ground-Contact Mask (M_contact)",
+      "format": "Tire/base pavement footprint polygon or lower-40% proxy (B_ground)",
+      "guideline": "Capture physical ground contact to prevent perspective overestimation"
+    },
+    {
+      "step": 6,
+      "target": "Elevated Canopy Headroom Gating (2.20m Rule)",
+      "classes": [
+        "umbrella_canopy"
+      ],
+      "guideline": "Verify if lower edge clears >= 2.20m; if yes, classify canopy as non-ground obstruction"
+    }
+  ],
+  "verification_status": "PENDING_HUMAN_INSPECTION",
+  "verified_by": null,
+  "verification_date": null
+}

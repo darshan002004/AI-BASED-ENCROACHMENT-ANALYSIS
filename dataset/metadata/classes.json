@@ -1,0 +1,128 @@
+{
+  "project": "EncroWatch AI",
+  "version": "1.0.0",
+  "description": "Taxonomy of 8 custom object classes and 3 geometric surface classes for urban footpath encroachment detection and accessibility assessment.",
+  "academic_reference": "EncroWatch AI Revised Research Paper, Sections 3.1 & 6.3",
+  "custom_object_classes": [
+    {
+      "id": 0,
+      "name": "motorcycle",
+      "display_name": "Two-Wheeler (Motorcycle / Scooter)",
+      "category": "Vehicular Encroachment",
+      "risk_weight": 22.0,
+      "description": "Motorcycles, scooters, mopeds, and two-wheelers parked or moving on the designated pedestrian footpath or curb zone.",
+      "inclusion_criteria": "Any two-wheeled motorized or electric transport vehicle whose wheels or body rest on or overhang the pedestrian walkway.",
+      "exclusion_criteria": "Two-wheelers situated fully within the active roadway carriageway with zero pedestrian corridor overlap.",
+      "contact_proxy_rule": "Lower 40% bounding box height or tire-pavement contact polygon."
+    },
+    {
+      "id": 1,
+      "name": "car",
+      "display_name": "Four-Wheeler / Light Commercial (Car / Auto / Van)",
+      "category": "Vehicular Encroachment",
+      "risk_weight": 26.0,
+      "description": "Hatchbacks, sedans, SUVs, auto-rickshaws, and light commercial vehicles parked or standing on or across pedestrian footpaths.",
+      "inclusion_criteria": "Four-wheel passenger or commercial vehicles encroaching onto the paved sidewalk, pedestrian plaza, or curb transition.",
+      "exclusion_criteria": "Vehicles moving legally on designated vehicular lanes or parked in authorized on-street marked bays without sidewalk overhang.",
+      "contact_proxy_rule": "Tire ground-contact patch (lower 30-40% bounding box) to prevent overestimating upper chassis overhang."
+    },
+    {
+      "id": 2,
+      "name": "vendor_cart",
+      "display_name": "Street Vendor Pushcart / Stall",
+      "category": "Commercial Encroachment",
+      "risk_weight": 20.0,
+      "description": "Mobile four-wheeled pushcarts, handcarts, fruit/vegetable stands, tea stalls, and fast-food trolleys occupying the pedestrian corridor.",
+      "inclusion_criteria": "Wheeled or semi-fixed vendor units occupying pedestrian right-of-way, reducing effective walkway width.",
+      "exclusion_criteria": "Indoor store displays, or carts located strictly off-street on private property behind the property setback line.",
+      "contact_proxy_rule": "Wheel-and-stand ground footprint polygon; canopy tarps annotated separately under umbrella_canopy."
+    },
+    {
+      "id": 3,
+      "name": "construction_debris",
+      "display_name": "Construction Debris / Sand / Rubble Mound",
+      "category": "Physical Barrier",
+      "risk_weight": 24.0,
+      "description": "Piles of sand, gravel, construction aggregate, brick stacks, excavated earth, and demolition rubble dumped onto footpaths.",
+      "inclusion_criteria": "Loose materials or accumulated solid construction debris that physically restrict pedestrian clearance or cause trip hazards.",
+      "exclusion_criteria": "Pre-installed municipal pavement pavers, drainage grates, or permanent civil structures.",
+      "contact_proxy_rule": "Full base polygon intersecting the pavement."
+    },
+    {
+      "id": 4,
+      "name": "commercial_signboard",
+      "display_name": "Commercial Signboard / Standee / A-Frame",
+      "category": "Commercial Encroachment",
+      "risk_weight": 14.0,
+      "description": "Portable A-frame chalkboard signs, promotional flex standees, banner tripods, and retail advertising displays placed on sidewalks.",
+      "inclusion_criteria": "Temporary or semi-permanent commercial advertising boards standing in the clear walking zone.",
+      "exclusion_criteria": "Permanent overhead municipal street name signs or traffic regulatory boards mounted on sanctioned posts > 2.20m high.",
+      "contact_proxy_rule": "Base feet / tripod contact polygon (lower 20% bounding box)."
+    },
+    {
+      "id": 5,
+      "name": "shop_extension",
+      "display_name": "Shopfront Extension / Display Stall / Crate",
+      "category": "Commercial Encroachment",
+      "risk_weight": 20.0,
+      "description": "Retail store spillover, clothing racks, shoe racks, plastic milk/beverage crates, and merchandise display tables extending beyond building lines.",
+      "inclusion_criteria": "Store inventory or merchandise racks placed on public sidewalks outside formal shop shutters.",
+      "exclusion_criteria": "Architectural features of the building located entirely behind the legal municipal property boundary.",
+      "contact_proxy_rule": "Base support footprint on the walkway."
+    },
+    {
+      "id": 6,
+      "name": "umbrella_canopy",
+      "display_name": "Elevated Vendor Umbrella / Tarp Canopy",
+      "category": "Elevated Structure",
+      "risk_weight": 12.0,
+      "description": "Large vendor sun umbrellas, polythene tarpaulins, cloth awnings, and temporary overhead shades.",
+      "inclusion_criteria": "Overhanging fabric/plastic shades associated with vendor stalls or street kiosks.",
+      "exclusion_criteria": "Permanent sanctioned building porticos, bus shelter roofs, or pedestrian umbrellas carried by moving pedestrians.",
+      "contact_proxy_rule": "Subject to dual-projection vertical gating: ground support pole vs. elevated canopy polygon with 2.20m headroom clearance check."
+    },
+    {
+      "id": 7,
+      "name": "pedestrian",
+      "display_name": "Pedestrian (Authorized Walkway User)",
+      "category": "Authorized User (Baseline / Non-Encroachment)",
+      "risk_weight": 0.0,
+      "description": "Walking, standing, or sitting human pedestrians, including wheelchair users and caregivers pushing strollers.",
+      "inclusion_criteria": "All human subjects located in the urban scene.",
+      "exclusion_criteria": "Statues, mannequins, or printed figures on commercial billboards.",
+      "contact_proxy_rule": "Feet contact patch (lower 15-20% bounding box). Not classified as an obstruction."
+    }
+  ],
+  "geometric_surface_classes": [
+    {
+      "name": "footpath_polygon",
+      "symbol": "P_FP",
+      "description": "Continuous polygonal region representing the paved or designated pedestrian walkway corridor."
+    },
+    {
+      "name": "roadway_polygon",
+      "symbol": "P_RD",
+      "description": "Continuous polygonal region representing the vehicular carriageway surface."
+    },
+    {
+      "name": "curb_line",
+      "symbol": "C",
+      "description": "Linear or ribbon boundary separating the pedestrian sidewalk from the roadway carriageway."
+    },
+    {
+      "name": "ground_contact_mask",
+      "symbol": "M_contact",
+      "description": "Precise binary mask of physical contact between an encroaching object and the ground pavement surface."
+    }
+  ],
+  "yolo_class_mapping": {
+    "0": "motorcycle",
+    "1": "car",
+    "2": "vendor_cart",
+    "3": "construction_debris",
+    "4": "commercial_signboard",
+    "5": "shop_extension",
+    "6": "umbrella_canopy",
+    "7": "pedestrian"
+  }
+}

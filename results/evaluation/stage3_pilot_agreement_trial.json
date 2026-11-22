@@ -1,0 +1,177 @@
+{
+  "trial_metadata": {
+    "trial_type": "Stage 3 Pilot Inter-Annotator Agreement Trial",
+    "sample_size": 15,
+    "paired_images": 5,
+    "classes_evaluated": [
+      "motorcycle",
+      "car",
+      "vendor_cart",
+      "construction_debris",
+      "commercial_signboard",
+      "shop_extension",
+      "umbrella_canopy",
+      "pedestrian"
+    ],
+    "annotators": [
+      "Annotator_1 (Primary Field)",
+      "Annotator_2 (Independent Quality Reviewer)"
+    ]
+  },
+  "measured_metrics": {
+    "cohens_kappa_actual": 0.8438,
+    "cohens_kappa_target_gate": 0.8,
+    "kappa_gate_achieved": true,
+    "mean_box_iou_actual": 0.8398,
+    "mean_box_iou_target_gate": 0.8,
+    "box_iou_gate_achieved": true,
+    "mean_polygon_iou_actual": 0.9163,
+    "mean_boundary_f1_actual": 0.9784,
+    "boundary_f1_target_gate": 0.75,
+    "bf1_gate_achieved": true
+  },
+  "confusion_matrix": [
+    [
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3
+    ]
+  ],
+  "disagreements": [
+    {
+      "pair_id": "P02",
+      "img": "PILOT_09",
+      "box_a": [
+        0.2,
+        0.7,
+        0.3,
+        0.4
+      ],
+      "cls_a": 2,
+      "box_b": [
+        0.22,
+        0.69,
+        0.28,
+        0.42
+      ],
+      "cls_b": 5,
+      "note": "DISAGREEMENT: vendor_cart vs shop_extension",
+      "measured_iou": 0.8333
+    },
+    {
+      "pair_id": "P12",
+      "img": "PILOT_34",
+      "box_a": [
+        0.7,
+        0.58,
+        0.25,
+        0.4
+      ],
+      "cls_a": 5,
+      "box_b": [
+        0.68,
+        0.59,
+        0.27,
+        0.39
+      ],
+      "cls_b": 2,
+      "note": "DISAGREEMENT: shop_extension vs vendor_cart",
+      "measured_iou": 0.8184
+    }
+  ],
+  "adjudication_outcomes": [
+    {
+      "case_id": "ADJ_01",
+      "image": "PILOT_09",
+      "object_description": "Semi-mobile wooden fruit stall on footpath curb",
+      "annotator_1_claim": "vendor_cart (Class 2)",
+      "annotator_2_claim": "shop_extension (Class 5)",
+      "senior_reviewer_ruling": "Classified as shop_extension (Class 5)",
+      "adjudication_rationale": "Object had fixed electrical wire connection to adjacent commercial building, making it a stationary shop extension rather than an independent pushcart."
+    },
+    {
+      "case_id": "ADJ_02",
+      "image": "PILOT_34",
+      "object_description": "Display table mounted outside stationery shop",
+      "annotator_1_claim": "shop_extension (Class 5)",
+      "annotator_2_claim": "vendor_cart (Class 2)",
+      "senior_reviewer_ruling": "Classified as shop_extension (Class 5)",
+      "adjudication_rationale": "Directly abuts storefront frontage without independent wheels or mobility apparatus."
+    }
+  ]
+}

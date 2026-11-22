@@ -1,0 +1,41 @@
+# EncroWatch AI — YOLO Dataset & Training Configuration
+# Hardware Profile: NVIDIA GeForce RTX 2050 Laptop GPU (4 GB VRAM), Windows 10
+# Framework Target: Ultralytics YOLOv8n / YOLO11n
+
+# Dataset Paths (YOLO standard format)
+path: C:/Users/Darshan B/.gemini/antigravity/scratch/encrowatch-ai/dataset/processed
+train: train/images
+val: val/images
+test: test/images
+
+# Custom Object Classes (8 Classes strictly aligned with Manuscript Sections 3.1 & 6.3)
+names:
+  0: motorcycle
+  1: car
+  2: vendor_cart
+  3: construction_debris
+  4: commercial_signboard
+  5: shop_extension
+  6: umbrella_canopy
+  7: pedestrian
+
+# Conservative Training Parameters for 4 GB VRAM Execution
+training_hyperparameters:
+  model: yolo11n.pt               # YOLO11 nano backbone (~2.6M params) or yolov8n.pt (~3.2M params)
+  imgsz: 640                      # 640x640 standard resolution for optimal speed/accuracy trade-off
+  batch: 4                        # Conservative batch size to stay within 1.5–2.2 GB VRAM; reduce to 2 if OOM occurs
+  epochs: 50                      # Standard MCA experimental training epochs
+  amp: true                       # Automatic Mixed Precision (FP16) - essential for 4 GB VRAM efficiency
+  device: 0                       # GPU device index 0 (RTX 2050)
+  workers: 2                      # Conservative Windows multiprocessing worker limit to avoid shared memory page lock
+  optimizer: AdamW                # AdamW for stable convergence on small custom datasets
+  lr0: 0.001                      # Initial learning rate
+  lrf: 0.01                       # Final learning rate factor (cosine decay)
+  momentum: 0.937                 # Momentum factor
+  weight_decay: 0.0005            # L2 regularization weight decay
+  warmup_epochs: 3.0              # Warmup epochs for gradual gradient scaling
+  close_mosaic: 10                # Disable mosaic augmentation for final 10 epochs for refined box boundaries
+  val: true                       # Run validation at each epoch
+  save: true                      # Save best and last checkpoint weights
+  save_period: 10                 # Checkpoint every 10 epochs
+  plots: true                     # Generate confusion matrices, PR curves, and F1 curves

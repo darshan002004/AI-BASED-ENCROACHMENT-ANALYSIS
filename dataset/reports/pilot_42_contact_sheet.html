@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EncroWatch AI — Stage 1.2 Pilot Dataset Contact Sheet (42 Selected Images)</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #0b1120; color: #f1f5f9; padding: 24px; margin: 0; }
+  header { margin-bottom: 24px; border-bottom: 1px solid #1e293b; padding-bottom: 16px; }
+  h1 { color: #38bdf8; font-size: 24px; margin: 0 0 8px 0; }
+  p.subtitle { color: #94a3b8; font-size: 14px; margin: 0; line-height: 1.5; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  .card { background: #1e293b; border-radius: 10px; overflow: hidden; border: 1px solid #334155; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
+  .card:hover { transform: translateY(-4px); border-color: #38bdf8; }
+  .img-box { width: 100%; height: 180px; background: #020617; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .content { padding: 14px; flex-grow: 1; font-size: 12px; }
+  .title-row { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+  .pid { font-weight: 800; color: #38bdf8; font-size: 13px; }
+  .filename { font-weight: 600; color: #f8fafc; font-size: 12px; margin-bottom: 6px; word-break: break-all; }
+  .meta { color: #94a3b8; margin-bottom: 3px; }
+  .task-info { margin-top: 8px; padding-top: 8px; border-top: 1px dashed #334155; color: #cbd5e1; font-size: 11px; }
+  .badge { font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
+  .badge-train { background: #065f46; color: #a7f3d0; }
+  .badge-val { background: #854d0e; color: #fef08a; }
+  .badge-test { background: #991b1b; color: #fecaca; }
+  .badge-clean { background: #0284c7; color: #e0f2fe; }
+  .badge-warn { background: #d97706; color: #fffbeb; }
+</style>
+</head>
+<body>
+<header>
+  <h1>EncroWatch AI — Stage 1.2 Pilot Dataset Contact Sheet</h1>
+  <p class="subtitle">
+    Inspection Grid of <strong>42 Selected Streetscape Images</strong> partitioned by geographical ward corridors into Train (60%), Validation (20%), and Test (20%).<br>
+    All scenes clustered to guarantee zero data leakage. Task JSON templates prepared in <code>dataset/annotations/tasks/</code>.
+  </p>
+</header>
+<div class="grid">
+
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/privacy/multi_053cbc202e_privacy.jpg" alt="multi_053cbc202e_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_01</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="multi_053cbc202e_privacy.jpg">multi_053cbc202e_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_053CBC202E</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (5.6 KB)</div>
+            <div class="meta"><strong>Folder:</strong> privacy</div>
+            <div class="task-info">Task: <code>PILOT_01_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/seg_1d3d63_6b4da95bd5.jpg" alt="seg_1d3d63_6b4da95bd5.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_02</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="seg_1d3d63_6b4da95bd5.jpg">seg_1d3d63_6b4da95bd5.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_1D3D63_6B4DA</div>
+            <div class="meta"><strong>Res:</strong> 1068x593 (196.7 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_02_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/segmap_6b4da95bd5.jpg" alt="segmap_6b4da95bd5.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_03</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="segmap_6b4da95bd5.jpg">segmap_6b4da95bd5.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_6B4DA95BD5</div>
+            <div class="meta"><strong>Res:</strong> 1068x593 (159.2 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_03_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/privacy_test_real.jpg" alt="privacy_test_real.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_04</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="privacy_test_real.jpg">privacy_test_real.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_PRIVACY_TEST</div>
+            <div class="meta"><strong>Res:</strong> 400x300 (6.7 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_04_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/privacy/privacy_test_real_privacy.jpg" alt="privacy_test_real_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_05</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="privacy_test_real_privacy.jpg">privacy_test_real_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_PRIVACY_TEST</div>
+            <div class="meta"><strong>Res:</strong> 400x300 (7.8 KB)</div>
+            <div class="meta"><strong>Folder:</strong> privacy</div>
+            <div class="task-info">Task: <code>PILOT_05_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_1591ba9f43_privacy.jpg" alt="upload_1591ba9f43_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_06</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_1591ba9f43_privacy.jpg">upload_1591ba9f43_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_1591B</div>
+            <div class="meta"><strong>Res:</strong> 400x300 (4.8 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_06_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_66cb1df9a5.jpg" alt="upload_66cb1df9a5.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_07</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_66cb1df9a5.jpg">upload_66cb1df9a5.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_66CB1</div>
+            <div class="meta"><strong>Res:</strong> 1068x593 (103.0 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_07_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/verify_19335d3f07.jpg" alt="verify_19335d3f07.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_08</span>
+              <span class="badge badge-test">TEST</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="verify_19335d3f07.jpg">verify_19335d3f07.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 4 (BTM Corridor - Quarantined)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_VERIFY_19335</div>
+            <div class="meta"><strong>Res:</strong> 1000x400 (65.5 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_08_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/ev_annotated_01c7665651.jpg" alt="ev_annotated_01c7665651.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_09</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="ev_annotated_01c7665651.jpg">ev_annotated_01c7665651.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_01C7665651</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (9.6 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_09_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/multi_0221674056.jpg" alt="multi_0221674056.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_10</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="multi_0221674056.jpg">multi_0221674056.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_0221674056</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (3.3 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_10_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/multi_0221674056_privacy.jpg" alt="multi_0221674056_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_11</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="multi_0221674056_privacy.jpg">multi_0221674056_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_0221674056</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (5.5 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_11_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/ev_annotated_0226f9ef90.jpg" alt="ev_annotated_0226f9ef90.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_12</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="ev_annotated_0226f9ef90.jpg">ev_annotated_0226f9ef90.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_0226F9EF90</div>
+            <div class="meta"><strong>Res:</strong> 800x500 (27.4 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_12_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/multi_05764d3085.jpg" alt="multi_05764d3085.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_13</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="multi_05764d3085.jpg">multi_05764d3085.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_05764D3085</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (3.1 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_13_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/privacy/multi_05764d3085_privacy.jpg" alt="multi_05764d3085_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_14</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="multi_05764d3085_privacy.jpg">multi_05764d3085_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_05764D3085</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (5.8 KB)</div>
+            <div class="meta"><strong>Folder:</strong> privacy</div>
+            <div class="task-info">Task: <code>PILOT_14_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/privacy/ev_0ff0088cda89_privacy.jpg" alt="ev_0ff0088cda89_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_15</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="ev_0ff0088cda89_privacy.jpg">ev_0ff0088cda89_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_0FF0088CDA89</div>
+            <div class="meta"><strong>Res:</strong> 800x500 (13.4 KB)</div>
+            <div class="meta"><strong>Folder:</strong> privacy</div>
+            <div class="task-info">Task: <code>PILOT_15_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/ev_16e9eab453.jpg" alt="ev_16e9eab453.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_16</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="ev_16e9eab453.jpg">ev_16e9eab453.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_16E9EAB453</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (3.5 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_16_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/privacy/ev_16e9eab453_privacy.jpg" alt="ev_16e9eab453_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_17</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="ev_16e9eab453_privacy.jpg">ev_16e9eab453_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_16E9EAB453</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (6.3 KB)</div>
+            <div class="meta"><strong>Folder:</strong> privacy</div>
+            <div class="task-info">Task: <code>PILOT_17_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/multi_1f45c9a921_privacy.jpg" alt="multi_1f45c9a921_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_18</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="multi_1f45c9a921_privacy.jpg">multi_1f45c9a921_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_1F45C9A921</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (5.6 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_18_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/ev_20bae89b43.jpg" alt="ev_20bae89b43.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_19</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="ev_20bae89b43.jpg">ev_20bae89b43.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_20BAE89B43</div>
+            <div class="meta"><strong>Res:</strong> 400x300 (2.5 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_19_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/multi_seg_2_0189c49e59.jpg" alt="multi_seg_2_0189c49e59.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_20</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="multi_seg_2_0189c49e59.jpg">multi_seg_2_0189c49e59.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_2_0189C49E59</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (9.5 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_20_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/annotated_6ca658bd8e.jpg" alt="annotated_6ca658bd8e.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_21</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="annotated_6ca658bd8e.jpg">annotated_6ca658bd8e.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_ANNOTATED_6C</div>
+            <div class="meta"><strong>Res:</strong> 640x480 (25.9 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_21_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/before_063197b1.jpg" alt="before_063197b1.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_22</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="before_063197b1.jpg">before_063197b1.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_BEFORE_06319</div>
+            <div class="meta"><strong>Res:</strong> 150x98 (11.4 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_22_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/segmap_c1cb554a70.jpg" alt="segmap_c1cb554a70.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_23</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="segmap_c1cb554a70.jpg">segmap_c1cb554a70.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_C1CB554A70</div>
+            <div class="meta"><strong>Res:</strong> 200x200 (4.9 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_23_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/privacy/test_img_privacy.jpg" alt="test_img_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_24</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="test_img_privacy.jpg">test_img_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 (MG Road)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_TEST_IMG</div>
+            <div class="meta"><strong>Res:</strong> 200x200 (3.5 KB)</div>
+            <div class="meta"><strong>Folder:</strong> privacy</div>
+            <div class="task-info">Task: <code>PILOT_24_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/test_street.jpg" alt="test_street.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_25</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="test_street.jpg">test_street.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_TEST_STREET</div>
+            <div class="meta"><strong>Res:</strong> 640x480 (8.4 KB)</div>
+            <div class="meta"><strong>Folder:</strong> .</div>
+            <div class="task-info">Task: <code>PILOT_25_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_0c191c92b6.png" alt="upload_0c191c92b6.png" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_26</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_0c191c92b6.png">upload_0c191c92b6.png</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_0C191</div>
+            <div class="meta"><strong>Res:</strong> 150x98 (35.1 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_26_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_229b91bcc0.png" alt="upload_229b91bcc0.png" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_27</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_229b91bcc0.png">upload_229b91bcc0.png</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_229B9</div>
+            <div class="meta"><strong>Res:</strong> 150x98 (34.8 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_27_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_3394f0c8be.jpg" alt="upload_3394f0c8be.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_28</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_3394f0c8be.jpg">upload_3394f0c8be.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_3394F</div>
+            <div class="meta"><strong>Res:</strong> 200x200 (1.3 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_28_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_3394f0c8be_privacy.jpg" alt="upload_3394f0c8be_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_29</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_3394f0c8be_privacy.jpg">upload_3394f0c8be_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_3394F</div>
+            <div class="meta"><strong>Res:</strong> 200x200 (4.2 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_29_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_3740241b85_privacy.jpg" alt="upload_3740241b85_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_30</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_3740241b85_privacy.jpg">upload_3740241b85_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_37402</div>
+            <div class="meta"><strong>Res:</strong> 150x98 (11.9 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_30_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_80ce8dd486_privacy.jpg" alt="upload_80ce8dd486_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_31</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_80ce8dd486_privacy.jpg">upload_80ce8dd486_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_80CE8</div>
+            <div class="meta"><strong>Res:</strong> 150x98 (11.9 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_31_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_b9016a199e_privacy.jpg" alt="upload_b9016a199e_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_32</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_b9016a199e_privacy.jpg">upload_b9016a199e_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_B9016</div>
+            <div class="meta"><strong>Res:</strong> 800x500 (13.3 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_32_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/privacy/upload_c16da09db2a1_privacy.jpg" alt="upload_c16da09db2a1_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_33</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_c16da09db2a1_privacy.jpg">upload_c16da09db2a1_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_C16DA</div>
+            <div class="meta"><strong>Res:</strong> 1068x593 (168.5 KB)</div>
+            <div class="meta"><strong>Folder:</strong> privacy</div>
+            <div class="task-info">Task: <code>PILOT_33_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/verify_5732c25ffc.jpg" alt="verify_5732c25ffc.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_34</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="verify_5732c25ffc.jpg">verify_5732c25ffc.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_VERIFY_5732C</div>
+            <div class="meta"><strong>Res:</strong> 1000x400 (102.3 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_34_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/verify_d20ff25a57.jpg" alt="verify_d20ff25a57.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_35</span>
+              <span class="badge badge-train">TRAIN</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="verify_d20ff25a57.jpg">verify_d20ff25a57.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 1 & 2 (Commercial Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_VERIFY_D20FF</div>
+            <div class="meta"><strong>Res:</strong> 1000x400 (26.4 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_35_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/segmap_052f0a6f7d.jpg" alt="segmap_052f0a6f7d.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_36</span>
+              <span class="badge badge-val">VAL</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="segmap_052f0a6f7d.jpg">segmap_052f0a6f7d.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 3 (Koramangala Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_052F0A6F7D</div>
+            <div class="meta"><strong>Res:</strong> 400x300 (14.2 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_36_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/multi_seg_1_098faa67aa.jpg" alt="multi_seg_1_098faa67aa.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_37</span>
+              <span class="badge badge-val">VAL</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="multi_seg_1_098faa67aa.jpg">multi_seg_1_098faa67aa.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 3 (Koramangala Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_1_098FAA67AA</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (9.8 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_37_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/ev_2dbd00371f_privacy.jpg" alt="ev_2dbd00371f_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_38</span>
+              <span class="badge badge-val">VAL</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="ev_2dbd00371f_privacy.jpg">ev_2dbd00371f_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 3 (Koramangala Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_2DBD00371F</div>
+            <div class="meta"><strong>Res:</strong> 320x240 (6.1 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_38_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/clear_street.jpg" alt="clear_street.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_39</span>
+              <span class="badge badge-val">VAL</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="clear_street.jpg">clear_street.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 3 (Koramangala Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_CLEAR_STREET</div>
+            <div class="meta"><strong>Res:</strong> 800x500 (11.8 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_39_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_0dd6777c44_privacy.jpg" alt="upload_0dd6777c44_privacy.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_40</span>
+              <span class="badge badge-val">VAL</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_0dd6777c44_privacy.jpg">upload_0dd6777c44_privacy.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 3 (Koramangala Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_0DD67</div>
+            <div class="meta"><strong>Res:</strong> 150x98 (11.9 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_40_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/original/upload_443da869f4_privacy.png" alt="upload_443da869f4_privacy.png" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_41</span>
+              <span class="badge badge-val">VAL</span>
+              <span class='badge badge-clean'>CLEAN IMAGE</span>
+            </div>
+            <div class="filename" title="upload_443da869f4_privacy.png">upload_443da869f4_privacy.png</div>
+            <div class="meta"><strong>Ward:</strong> Ward 3 (Koramangala Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_UPLOAD_443DA</div>
+            <div class="meta"><strong>Res:</strong> 150x98 (35.7 KB)</div>
+            <div class="meta"><strong>Folder:</strong> original</div>
+            <div class="task-info">Task: <code>PILOT_41_task.json</code></div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="img-box">
+            <img src="file:///backend/uploads/annotated/verify_01408e96cb.jpg" alt="verify_01408e96cb.jpg" loading="lazy" onerror="this.alt='Preview unavailable';">
+          </div>
+          <div class="content">
+            <div class="title-row">
+              <span class="pid">PILOT_42</span>
+              <span class="badge badge-val">VAL</span>
+              <span class='badge badge-warn'>OVERLAY MASK</span>
+            </div>
+            <div class="filename" title="verify_01408e96cb.jpg">verify_01408e96cb.jpg</div>
+            <div class="meta"><strong>Ward:</strong> Ward 3 (Koramangala Corridor)</div>
+            <div class="meta"><strong>Cluster:</strong> SCENE_VERIFY_01408</div>
+            <div class="meta"><strong>Res:</strong> 1000x400 (68.7 KB)</div>
+            <div class="meta"><strong>Folder:</strong> annotated</div>
+            <div class="task-info">Task: <code>PILOT_42_task.json</code></div>
+          </div>
+        </div>
+        
+</div>
+</body>
+</html>

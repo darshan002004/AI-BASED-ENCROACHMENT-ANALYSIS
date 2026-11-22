@@ -1,0 +1,21 @@
+{
+  "dataset_name": "encrowatch_urban_corridor_v1",
+  "splitting_protocol": "Spatial Ward Disjoint (Wards 1 & 2 -> Train, Ward 3 -> Val, Ward 4 -> Test)",
+  "split_counts": {
+    "train": 0,
+    "val": 0,
+    "test": 0,
+    "unassigned": 0
+  },
+  "classes": [
+    "motorcycle",
+    "car",
+    "vendor_cart",
+    "construction_debris",
+    "commercial_signboard",
+    "shop_extension",
+    "umbrella_canopy",
+    "pedestrian"
+  ],
+  "manifest_path": "C:\\Users\\Darshan B\\.gemini\\antigravity\\scratch\\encrowatch-ai\\dataset\\processed\\data.yaml"
+}

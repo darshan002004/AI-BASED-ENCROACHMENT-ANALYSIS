@@ -1,0 +1,29 @@
+# EncroWatch AI — Verified GPU Research Dependencies
+# Hardware Target: NVIDIA GeForce RTX 2050 (4 GB VRAM), Windows 11 (AMD64)
+# Python Runtime: Python 3.12.10 (AMD64)
+# Virtual Environment: .venv
+
+# Step 1: Install PyTorch with official CUDA 12.4 Windows binaries:
+# pip install torch==2.6.0+cu124 torchvision==0.21.0+cu124 --index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+
+# Step 2: Install Ultralytics and Core Machine Learning Dependencies:
+# pip install ultralytics scipy scikit-learn shapely opencv-python
+ultralytics>=8.4.0
+scipy>=1.15.0
+scikit-learn>=1.6.0
+shapely>=2.0.0
+opencv-python>=4.9.0
+numpy>=2.1.0
+pillow>=11.0.0
+
+# Supporting Scientific Dependencies
+matplotlib>=3.10.0
+psutil>=7.0.0
+requests>=2.32.0
+packaging>=24.2
+filelock>=3.17.0
+sympy>=1.13.1
+networkx>=3.4.0
+jinja2>=3.1.5

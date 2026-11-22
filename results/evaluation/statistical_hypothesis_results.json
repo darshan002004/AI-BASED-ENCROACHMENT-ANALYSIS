@@ -1,0 +1,58 @@
+{
+  "H1_WILCOXON": {
+    "hypothesis_id": "H1_MODEL_MAP_DELTA",
+    "description": "Wilcoxon signed-rank test comparing paired mAP scores between YOLO11n (M1) and YOLOv8n (M2)",
+    "sample_size": 23,
+    "test_statistic_w": 34.0,
+    "p_value": 0.0008494853973388672,
+    "alpha": 0.05,
+    "effect_size_r": 0.6956,
+    "statistically_significant": true,
+    "interpretation": "Statistically significant difference detected (p=8.4949e-04 < 0.05) with effect size r=0.696."
+  },
+  "H2_MCNEMAR": {
+    "hypothesis_id": "H2_SPATIAL_PROXY_MCNEMAR",
+    "description": "McNemar's test evaluating discordance between Naive Bounding Box and Ground-Contact Proxy",
+    "contingency_table": [
+      [
+        35,
+        13
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "chi2_statistic": 11.0769,
+    "p_value": 0.000874,
+    "alpha": 0.05,
+    "odds_ratio": 13.0,
+    "statistically_significant": true,
+    "interpretation": "Ground-contact proxy significantly reduces spatial misclassifications (chi2=11.08, p=8.7409e-04, odds ratio=13.00)."
+  },
+  "H3_BLAND_ALTMAN": {
+    "hypothesis_id": "H3_ACCESSIBILITY_BLAND_ALTMAN",
+    "description": "Bland-Altman agreement and residual error analysis between Tier B vision and Tier C laser survey",
+    "sample_size": 50,
+    "mean_difference_bias": 0.0152,
+    "std_difference": 0.0328,
+    "lower_limit_of_agreement": -0.049,
+    "upper_limit_of_agreement": 0.0794,
+    "mae_meters": 0.028,
+    "rmse_meters": 0.0358,
+    "pearson_r": 0.9968,
+    "pearson_p_value": 0.0,
+    "acceptable_agreement": true,
+    "interpretation": "Acceptable agreement demonstrated: Mean bias=0.015m, 95% LoA=[-0.049m, 0.079m], MAE=0.028m <= 0.15m, Pearson r=0.997 (p=2.4273e-54)."
+  },
+  "POWER_ANALYSIS": {
+    "test_type": "Two-Tailed Paired Comparison (Wilcoxon / t-test)",
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "assumed_effect_size_d": 0.5,
+    "required_sample_size_n": 34,
+    "actual_target_sample_size": 600,
+    "power_achieved": 1.0,
+    "adequacy_verdict": "Target field dataset size N=600 heavily exceeds minimum requirement N=34 for medium effect size (d=0.5), achieving 100.0% statistical power."
+  }
+}

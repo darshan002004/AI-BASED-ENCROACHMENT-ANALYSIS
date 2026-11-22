@@ -1,0 +1,38 @@
+{
+  "hardware_metadata": {
+    "device": "NVIDIA GeForce RTX 2050",
+    "total_vram_mb": 4095.5,
+    "cuda_version": "12.4",
+    "pytorch_version": "2.6.0+cu124",
+    "amp_fp16": true
+  },
+  "profiles": {
+    "batch_1": {
+      "batch_size": 1,
+      "step_time_ms": 106.91,
+      "peak_allocated_mb": 933.27,
+      "peak_reserved_mb": 1334.0,
+      "vram_headroom_mb": 2761.5,
+      "vram_utilization_pct": 32.57,
+      "safety_verdict": "SAFE (< 75% VRAM)"
+    },
+    "batch_2": {
+      "batch_size": 2,
+      "step_time_ms": 214.96,
+      "peak_allocated_mb": 1826.8,
+      "peak_reserved_mb": 2222.0,
+      "vram_headroom_mb": 1873.5,
+      "vram_utilization_pct": 54.25,
+      "safety_verdict": "SAFE (< 75% VRAM)"
+    },
+    "batch_4": {
+      "batch_size": 4,
+      "step_time_ms": 1520.71,
+      "peak_allocated_mb": 3615.87,
+      "peak_reserved_mb": 4556.0,
+      "vram_headroom_mb": -460.5,
+      "vram_utilization_pct": 111.24,
+      "safety_verdict": "RISK_OF_OOM"
+    }
+  }
+}

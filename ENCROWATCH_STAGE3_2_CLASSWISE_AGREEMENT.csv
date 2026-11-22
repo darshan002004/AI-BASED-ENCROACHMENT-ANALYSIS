@@ -1,0 +1,9 @@
+class_name,sample_pairs_evaluated,matched_agreements,disagreements,raw_agreement_rate,ci_95_lower,ci_95_upper,mean_bounding_box_iou,pilot_quality_verdict
+motorcycle,3,3,0,1.0,0.4385,1.0,0.8642,ACCEPTABLE (>= 0.80)
+car,1,1,0,1.0,0.2065,1.0,0.8845,ACCEPTABLE (>= 0.80)
+vendor_cart,2,1,1,0.5,0.0945,0.9055,0.8191,DISAGREEMENT_ADJUDICATED
+construction_debris,2,2,0,1.0,0.3424,1.0,0.8083,ACCEPTABLE (>= 0.80)
+commercial_signboard,2,2,0,1.0,0.3424,1.0,0.8313,ACCEPTABLE (>= 0.80)
+shop_extension,1,0,1,0.0,0.0,0.7935,0.7635,DISAGREEMENT_ADJUDICATED
+umbrella_canopy,1,1,0,1.0,0.2065,1.0,0.8327,ACCEPTABLE (>= 0.80)
+pedestrian,3,3,0,1.0,0.4385,1.0,0.9018,ACCEPTABLE (>= 0.80)

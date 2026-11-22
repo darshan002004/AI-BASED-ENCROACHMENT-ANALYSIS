@@ -1,0 +1,113 @@
+# ==============================================================================
+# EncroWatch AI — Production Docker Compose Deployment Specification
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------------------------------
+  # 1. MongoDB Persistent Database Service
+  # ----------------------------------------------------------------------------
+  mongodb:
+    image: mongo:7.0
+    container_name: encrowatch_mongodb
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=${DATABASE_NAME:-encrowatch_ai_db}
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - encrowatch_net
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ----------------------------------------------------------------------------
+  # 2. FastAPI Backend & AI Pipeline Service
+  # ----------------------------------------------------------------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: encrowatch_backend
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALGORITHM=${ALGORITHM:-HS256}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES:-1440}
+      - ALLOW_DEMO_SWITCH=${ALLOW_DEMO_SWITCH:-false}
+      - MONGODB_URI=${MONGODB_URI:-mongodb://mongodb:27017}
+      - DATABASE_NAME=${DATABASE_NAME:-encrowatch_ai_db}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173,http://localhost:80,http://127.0.0.1:80}
+      - UPLOAD_DIR=/app/uploads
+      - YOLO_WEIGHTS_PATH=/app/app/ai/weights/yolov5n.onnx
+      - ALLOW_DEMO_MODE=false
+    volumes:
+      - backend_uploads:/app/uploads
+      - backend_data:/app/data
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - encrowatch_net
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  # ----------------------------------------------------------------------------
+  # 3. React Frontend SPA & Nginx Reverse Proxy Service
+  # ----------------------------------------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: encrowatch_frontend
+    restart: unless-stopped
+    ports:
+      - "${PORT:-80}:80"
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - encrowatch_net
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost/"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+# ------------------------------------------------------------------------------
+# Persistent Storage Volumes
+# ------------------------------------------------------------------------------
+volumes:
+  mongo_data:
+    name: encrowatch_mongo_data
+  backend_uploads:
+    name: encrowatch_backend_uploads
+  backend_data:
+    name: encrowatch_backend_data
+
+# ------------------------------------------------------------------------------
+# Isolated Bridge Network
+# ------------------------------------------------------------------------------
+networks:
+  encrowatch_net:
+    name: encrowatch_network
+    driver: bridge

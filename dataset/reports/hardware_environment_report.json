@@ -1,0 +1,78 @@
+{
+  "platform": {
+    "system": "Windows",
+    "release": "11",
+    "machine": "AMD64",
+    "python_executable": "C:\\Users\\Darshan B\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "python_version": "3.12.10"
+  },
+  "gpu_hardware": {
+    "gpu_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 2050",
+    "total_vram_mb": 4096,
+    "driver_version": "610.91",
+    "cuda_version": "None",
+    "error": null
+  },
+  "python_packages": {
+    "torch": {
+      "installed": false,
+      "version": null
+    },
+    "torchvision": {
+      "installed": false,
+      "version": null
+    },
+    "ultralytics": {
+      "installed": false,
+      "version": null
+    },
+    "cv2": {
+      "installed": true,
+      "version": "5.0.0"
+    },
+    "shapely": {
+      "installed": true,
+      "version": "2.1.2"
+    },
+    "numpy": {
+      "installed": true,
+      "version": "2.5.3"
+    },
+    "scipy": {
+      "installed": false,
+      "version": null
+    },
+    "sklearn": {
+      "installed": false,
+      "version": null
+    }
+  },
+  "environment_readiness": "NOT_READY_DEPENDENCIES_MISSING",
+  "conservative_gpu_configuration": {
+    "recommended_backbones": [
+      "yolo11n.pt",
+      "yolov8n.pt"
+    ],
+    "recommended_imgsz": 640,
+    "recommended_batch_size": 4,
+    "mixed_precision_fp16": true,
+    "max_workers": 2,
+    "sequential_execution_required": true,
+    "vram_budget_estimate_mb": {
+      "model_weights": 25,
+      "gradients_and_optimizer_states": 120,
+      "fp16_activations_batch_4_img640": 1400,
+      "cuda_context_overhead": 450,
+      "total_estimated_peak_vram_mb": 1995,
+      "free_headroom_mb": 2101
+    }
+  },
+  "safe_installation_plan": [
+    "# Step 1: Install PyTorch with CUDA 12.1 / 12.4 support (compatible with Driver 610.91):",
+    "pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121",
+    "",
+    "# Step 2: Install Ultralytics YOLO framework and statistical/scientific dependencies:",
+    "pip install ultralytics scipy scikit-learn"
+  ]
+}

@@ -1,0 +1,138 @@
+# ==============================================================================
+# EncroWatch AI — Production Hardened Docker Compose Configuration
+# ==============================================================================
+# In production, external access is strictly limited to the Nginx reverse proxy
+# on port 80/443. The FastAPI backend and MongoDB database have NO exposed ports
+# to the host or internet and communicate strictly across the internal bridge.
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------------------------------
+  # 1. MongoDB Production Persistent Service
+  # ----------------------------------------------------------------------------
+  mongodb:
+    image: mongo:7.0
+    container_name: encrowatch_prod_mongodb
+    restart: unless-stopped
+    # In production, do NOT expose port 27017 to the host network
+    expose:
+      - "27017"
+    environment:
+      - MONGO_INITDB_DATABASE=${DATABASE_NAME:-encrowatch_ai_db}
+    volumes:
+      - mongo_prod_data:/data/db
+    networks:
+      - encrowatch_prod_net
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+        reservations:
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+  # ----------------------------------------------------------------------------
+  # 2. FastAPI Backend & AI Vision Pipeline Service
+  # ----------------------------------------------------------------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: encrowatch_prod_backend
+    restart: unless-stopped
+    # Internal communication only via Nginx reverse proxy
+    expose:
+      - "8000"
+    environment:
+      - ENVIRONMENT=production
+      - SECRET_KEY=${SECRET_KEY:?SECRET_KEY environment variable is mandatory}
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES:-1440}
+      - ALLOW_DEMO_SWITCH=${ALLOW_DEMO_SWITCH:-true}
+      - MONGODB_URI=mongodb://mongodb:27017
+      - DATABASE_NAME=${DATABASE_NAME:-encrowatch_ai_db}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost,https://yourdomain.com}
+      - UPLOAD_DIR=/app/uploads
+      - YOLO_WEIGHTS_PATH=/app/app/ai/weights/yolov5n.onnx
+      - ALLOW_DEMO_MODE=false
+    volumes:
+      - backend_prod_uploads:/app/uploads
+      - backend_prod_data:/app/data
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - encrowatch_prod_net
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 1536M
+        reservations:
+          cpus: '0.5'
+          memory: 384M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  # ----------------------------------------------------------------------------
+  # 3. React Frontend SPA & Nginx Reverse Proxy (Single Ingress Point)
+  # ----------------------------------------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: encrowatch_prod_frontend
+    restart: unless-stopped
+    ports:
+      - "${PORT:-80}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - encrowatch_prod_net
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 64M
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+# ------------------------------------------------------------------------------
+# Production Named Volumes
+# ------------------------------------------------------------------------------
+volumes:
+  mongo_prod_data:
+    name: encrowatch_prod_mongo_data
+  backend_prod_uploads:
+    name: encrowatch_prod_backend_uploads
+  backend_prod_data:
+    name: encrowatch_prod_backend_data
+
+# ------------------------------------------------------------------------------
+# Isolated Bridge Network
+# ------------------------------------------------------------------------------
+networks:
+  encrowatch_prod_net:
+    name: encrowatch_prod_network
+    driver: bridge

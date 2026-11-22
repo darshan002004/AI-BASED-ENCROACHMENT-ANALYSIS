@@ -1,0 +1,12 @@
+{
+  "M1: YOLO11n": {
+    "avg_latency_ms": 139.63,
+    "throughput_fps": 7.16,
+    "peak_vram_mb": 66.2
+  },
+  "M2: YOLOv8n": {
+    "avg_latency_ms": 58.04,
+    "throughput_fps": 17.23,
+    "peak_vram_mb": 78.11
+  }
+}

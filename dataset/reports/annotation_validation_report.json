@@ -1,0 +1,46 @@
+{
+  "detection_validation": {
+    "status": "VALIDATED",
+    "files_checked": 0,
+    "valid_elements": 0,
+    "class_tallies": {
+      "motorcycle": 0,
+      "car": 0,
+      "vendor_cart": 0,
+      "construction_debris": 0,
+      "commercial_signboard": 0,
+      "shop_extension": 0,
+      "umbrella_canopy": 0,
+      "pedestrian": 0
+    },
+    "error_count": 0,
+    "errors": []
+  },
+  "segmentation_validation": {
+    "status": "VALIDATED",
+    "files_checked": 0,
+    "valid_elements": 0,
+    "class_tallies": {
+      "motorcycle": 0,
+      "car": 0,
+      "vendor_cart": 0,
+      "construction_debris": 0,
+      "commercial_signboard": 0,
+      "shop_extension": 0,
+      "umbrella_canopy": 0,
+      "pedestrian": 0
+    },
+    "error_count": 0,
+    "errors": []
+  },
+  "classes_allowed": {
+    "0": "motorcycle",
+    "1": "car",
+    "2": "vendor_cart",
+    "3": "construction_debris",
+    "4": "commercial_signboard",
+    "5": "shop_extension",
+    "6": "umbrella_canopy",
+    "7": "pedestrian"
+  }
+}

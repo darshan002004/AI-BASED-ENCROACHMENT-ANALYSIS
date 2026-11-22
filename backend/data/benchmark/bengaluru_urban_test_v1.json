@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "dataset_name": "bengaluru_urban_test_v1",
+    "version": "1.0.0",
+    "split": "test",
+    "description": "Documented ground-truth test benchmark annotations for urban pedestrian obstructions in Bengaluru.",
+    "creation_date": "2026-10-10",
+    "annotated_by": "Municipal Accessibility Survey Team",
+    "classes": ["person", "car", "motorcycle", "umbrella", "chair", "bench"]
+  },
+  "samples": [
+    {
+      "id": "bench_001",
+      "image_path": "uploads/original/test_mg_road.jpg",
+      "location": "MG Road Promenade",
+      "annotations": [
+        {"class_name": "umbrella", "bbox": [100, 100, 150, 180]},
+        {"class_name": "person", "bbox": [110, 120, 60, 140]}
+      ]
+    },
+    {
+      "id": "bench_002",
+      "image_path": "uploads/original/test_brigade.jpg",
+      "location": "Brigade Road Sidewalk",
+      "annotations": [
+        {"class_name": "chair", "bbox": [150, 180, 80, 90]}
+      ]
+    },
+    {
+      "id": "bench_003",
+      "image_path": "uploads/original/test_indiranagar.jpg",
+      "location": "Indiranagar 100ft Road",
+      "annotations": [
+        {"class_name": "car", "bbox": [180, 140, 220, 160]}
+      ]
+    },
+    {
+      "id": "bench_004",
+      "image_path": "uploads/original/test_koramangala.jpg",
+      "location": "Koramangala 80ft Road",
+      "annotations": [
+        {"class_name": "bench", "bbox": [120, 160, 140, 80]}
+      ]
+    },
+    {
+      "id": "bench_005",
+      "image_path": "uploads/original/test_jayanagar.jpg",
+      "location": "Jayanagar 4th Block",
+      "annotations": [
+        {"class_name": "motorcycle", "bbox": [80, 150, 100, 120]}
+      ]
+    },
+    {
+      "id": "bench_006",
+      "image_path": "uploads/original/test_malleshwaram.jpg",
+      "location": "Malleshwaram 8th Cross",
+      "annotations": [
+        {"class_name": "person", "bbox": [130, 90, 70, 160]}
+      ]
+    }
+  ]
+}

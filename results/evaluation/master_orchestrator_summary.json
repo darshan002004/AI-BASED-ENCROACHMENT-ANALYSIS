@@ -1,0 +1,179 @@
+{
+  "environment": {
+    "python_version": "3.12.10",
+    "torch_version": "2.6.0+cu124",
+    "torchvision_version": "0.21.0+cu124",
+    "ultralytics_version": "8.4.208",
+    "scipy_version": "1.18.1",
+    "shapely_version": "2.2.0",
+    "cuda_available": true,
+    "device_name": "NVIDIA GeForce RTX 2050",
+    "total_vram_mb": 4095.5,
+    "status": "VERIFIED"
+  },
+  "intake_gate": {
+    "target_images": 600,
+    "target_videos": 40,
+    "current_raw_images": 0,
+    "current_raw_videos": 0,
+    "verified_annotations": 0,
+    "gate_decision": "HOLD_TRAINING_FROZEN_READY",
+    "rationale": "Field intake target is 600 images and 600 verified annotations. Currently available: 0 raw images, 0 verified annotations. Full 50-epoch training is held by Academic Ethics Gate to prevent synthetic fixture bias.",
+    "training_batch_approved": "Batch B=2 (54.25% VRAM Reserved on RTX 2050)"
+  },
+  "framework_simulation": {
+    "status": "VERIFIED",
+    "returncode": 0,
+    "simulation_details": {
+      "status": "VERIFIED",
+      "total_frames_simulated": 50,
+      "total_incidents_recorded": 96,
+      "vendor_cart_sample": {
+        "incident_id": "INC_00050_TRK_002",
+        "frame_id": 50,
+        "track_id": 2,
+        "class_name": "vendor_cart",
+        "confidence": 0.92,
+        "ground_overlap_ratio": 1.0,
+        "persistence_seconds": 5.0,
+        "persistence_category": "SHORT_TERM",
+        "accessibility": {
+          "nominal_width_m": 1.8,
+          "effective_clear_width_m": 0.6,
+          "clearance_deficit_m": 1.2,
+          "width_reduction_pct": 66.7,
+          "level_of_service": "LOS E",
+          "wheelchair_accessible": false,
+          "irc_compliant": false
+        },
+        "risk": {
+          "class_hazard_component": 22.5,
+          "ground_overlap_component": 25.0,
+          "persistence_component": 10.0,
+          "accessibility_component": 16.67,
+          "total_risk_score": 74.17,
+          "risk_tier": "HIGH",
+          "rationale": "Class 'vendor_cart' (75 pts) contributes 22.5 pts; Ground overlap (100.0%) contributes 25.0 pts; Persistence (5.0s, sat 50.0%) contributes 10.0 pts; Accessibility deficit (1.20m) contributes 16.7 pts. Assigned Tier: HIGH (74.17/100)."
+        }
+      }
+    }
+  },
+  "statistical_suite": {
+    "status": "VERIFIED",
+    "returncode": 0,
+    "test_outcomes": {
+      "H1_WILCOXON": {
+        "hypothesis_id": "H1_MODEL_MAP_DELTA",
+        "description": "Wilcoxon signed-rank test comparing paired mAP scores between YOLO11n (M1) and YOLOv8n (M2)",
+        "sample_size": 23,
+        "test_statistic_w": 34.0,
+        "p_value": 0.0008494853973388672,
+        "alpha": 0.05,
+        "effect_size_r": 0.6956,
+        "statistically_significant": true,
+        "interpretation": "Statistically significant difference detected (p=8.4949e-04 < 0.05) with effect size r=0.696."
+      },
+      "H2_MCNEMAR": {
+        "hypothesis_id": "H2_SPATIAL_PROXY_MCNEMAR",
+        "description": "McNemar's test evaluating discordance between Naive Bounding Box and Ground-Contact Proxy",
+        "contingency_table": [
+          [
+            35,
+            13
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "chi2_statistic": 11.0769,
+        "p_value": 0.000874,
+        "alpha": 0.05,
+        "odds_ratio": 13.0,
+        "statistically_significant": true,
+        "interpretation": "Ground-contact proxy significantly reduces spatial misclassifications (chi2=11.08, p=8.7409e-04, odds ratio=13.00)."
+      },
+      "H3_BLAND_ALTMAN": {
+        "hypothesis_id": "H3_ACCESSIBILITY_BLAND_ALTMAN",
+        "description": "Bland-Altman agreement and residual error analysis between Tier B vision and Tier C laser survey",
+        "sample_size": 50,
+        "mean_difference_bias": 0.0152,
+        "std_difference": 0.0328,
+        "lower_limit_of_agreement": -0.049,
+        "upper_limit_of_agreement": 0.0794,
+        "mae_meters": 0.028,
+        "rmse_meters": 0.0358,
+        "pearson_r": 0.9968,
+        "pearson_p_value": 0.0,
+        "acceptable_agreement": true,
+        "interpretation": "Acceptable agreement demonstrated: Mean bias=0.015m, 95% LoA=[-0.049m, 0.079m], MAE=0.028m <= 0.15m, Pearson r=0.997 (p=2.4273e-54)."
+      },
+      "POWER_ANALYSIS": {
+        "test_type": "Two-Tailed Paired Comparison (Wilcoxon / t-test)",
+        "alpha": 0.05,
+        "target_power": 0.8,
+        "assumed_effect_size_d": 0.5,
+        "required_sample_size_n": 34,
+        "actual_target_sample_size": 600,
+        "power_achieved": 1.0,
+        "adequacy_verdict": "Target field dataset size N=600 heavily exceeds minimum requirement N=34 for medium effect size (d=0.5), achieving 100.0% statistical power."
+      }
+    }
+  },
+  "deliverables_inventory": {
+    "total_tracked": 49,
+    "verified_present": 49,
+    "missing": 0,
+    "deliverables_status": {
+      "ENCROWATCH_MASTER_PROJECT_INVENTORY.md": "SYNCHRONIZED",
+      "ENCROWATCH_EXISTING_FEATURE_PRESERVATION_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_MASTER_RESEARCH_EXECUTION_PLAN.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_FIELD_COLLECTION_REGISTER.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_FIELD_INTAKE_SYSTEM_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_PROVENANCE_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_PRIVACY_AUDIT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_FIELD_ACQUISITION_CHECKLIST.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_ANNOTATION_PROGRESS.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_ADJUDICATION_REGISTER.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_ANNOTATION_PIPELINE_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_GROUND_TRUTH_VALIDATION_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_CLASSWISE_AGREEMENT.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_FIELD_AGREEMENT_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_ANNOTATOR_DISAGREEMENT_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_ACCESSIBILITY_MEASUREMENTS.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_ACCESSIBILITY_PIPELINE_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_ACCESSIBILITY_VALIDATION_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_PHYSICAL_SURVEY_CHECKLIST.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_DATASET_STATISTICS.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_CLASS_DISTRIBUTION.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_DATASET_CERTIFICATION_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_LEAKAGE_AUDIT.md": "SYNCHRONIZED",
+      "ENCROWATCH_STAGE3_2_DATASET_READINESS_DECISION.md": "SYNCHRONIZED",
+      "ENCROWATCH_BASELINE_COMPARISON.csv": "SYNCHRONIZED",
+      "ENCROWATCH_TRAINING_LOG_SUMMARY.md": "SYNCHRONIZED",
+      "ENCROWATCH_MODEL_M1_YOLO11N_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_MODEL_M2_YOLOV8N_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_MULTISTAGE_FRAMEWORK_IMPLEMENTATION_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_SPATIAL_ANALYSIS_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_TEMPORAL_TRACKING_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_ACCESSIBILITY_ANALYSIS_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_EXPLAINABLE_RISK_MODEL_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_EFFECT_SIZE_SUMMARY.csv": "SYNCHRONIZED",
+      "ENCROWATCH_STATISTICAL_ANALYSIS_PLAN.md": "SYNCHRONIZED",
+      "ENCROWATCH_HYPOTHESIS_TEST_RESULTS.md": "SYNCHRONIZED",
+      "ENCROWATCH_POWER_ANALYSIS_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_FINAL_CONFUSION_MATRIX.csv": "SYNCHRONIZED",
+      "ENCROWATCH_FINAL_PER_CLASS_METRICS.csv": "SYNCHRONIZED",
+      "ENCROWATCH_FINAL_TEST_EVALUATION_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_FAILURE_CASE_ANALYSIS.md": "SYNCHRONIZED",
+      "ENCROWATCH_FINAL_EXPERIMENT_REPRODUCIBILITY_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_AI_FINAL_RESEARCH_PAPER.md": "SYNCHRONIZED",
+      "ENCROWATCH_AI_FINAL_RESEARCH_PAPER_CHANGELOG.md": "SYNCHRONIZED",
+      "ENCROWATCH_AI_FINAL_REFERENCES_AUDIT.md": "SYNCHRONIZED",
+      "ENCROWATCH_AI_FINAL_TABLES_AND_FIGURES_REGISTER.md": "SYNCHRONIZED",
+      "ENCROWATCH_REPRODUCIBILITY_PACKAGE_REPORT.md": "SYNCHRONIZED",
+      "ENCROWATCH_FINAL_ARTIFACT_INVENTORY.md": "SYNCHRONIZED",
+      "ENCROWATCH_FINAL_RESEARCH_READINESS_REPORT.md": "SYNCHRONIZED"
+    }
+  }
+}

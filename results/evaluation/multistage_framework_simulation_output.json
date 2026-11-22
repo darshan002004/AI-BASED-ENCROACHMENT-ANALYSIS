@@ -1,0 +1,33 @@
+{
+  "status": "VERIFIED",
+  "total_frames_simulated": 50,
+  "total_incidents_recorded": 96,
+  "vendor_cart_sample": {
+    "incident_id": "INC_00050_TRK_002",
+    "frame_id": 50,
+    "track_id": 2,
+    "class_name": "vendor_cart",
+    "confidence": 0.92,
+    "ground_overlap_ratio": 1.0,
+    "persistence_seconds": 5.0,
+    "persistence_category": "SHORT_TERM",
+    "accessibility": {
+      "nominal_width_m": 1.8,
+      "effective_clear_width_m": 0.6,
+      "clearance_deficit_m": 1.2,
+      "width_reduction_pct": 66.7,
+      "level_of_service": "LOS E",
+      "wheelchair_accessible": false,
+      "irc_compliant": false
+    },
+    "risk": {
+      "class_hazard_component": 22.5,
+      "ground_overlap_component": 25.0,
+      "persistence_component": 10.0,
+      "accessibility_component": 16.67,
+      "total_risk_score": 74.17,
+      "risk_tier": "HIGH",
+      "rationale": "Class 'vendor_cart' (75 pts) contributes 22.5 pts; Ground overlap (100.0%) contributes 25.0 pts; Persistence (5.0s, sat 50.0%) contributes 10.0 pts; Accessibility deficit (1.20m) contributes 16.7 pts. Assigned Tier: HIGH (74.17/100)."
+    }
+  }
+}
