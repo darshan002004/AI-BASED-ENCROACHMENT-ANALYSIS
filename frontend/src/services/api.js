@@ -45,6 +45,7 @@ export const authAPI = {
 
 export const incidentsAPI = {
   list: (params) => API.get('/incidents', { params }),
+  getAll: (params) => API.get('/incidents', { params }),
   getById: (id) => API.get(`/incidents/${id}`),
   create: (data) => API.post('/incidents', data),
   update: (id, data) => API.patch(`/incidents/${id}`, data),

@@ -22,7 +22,7 @@ export default function ReportsPage() {
       .then((res) => setKpis(res.data))
       .catch(console.warn);
 
-    incidentsAPI.getAll({ limit: 1 })
+    (incidentsAPI.list || incidentsAPI.getAll)({ limit: 1 })
       .then((res) => {
         if (res.data && res.data.length > 0) {
           setFirstIncidentId(res.data[0].id || res.data[0]._id);
