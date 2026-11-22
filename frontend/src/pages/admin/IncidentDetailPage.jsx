@@ -26,7 +26,8 @@ import {
   ShieldAlert,
   MessageSquare,
   RotateCcw,
-  FileCheck
+  FileCheck,
+  XCircle
 } from 'lucide-react';
 import axios from 'axios';
 import { StatusBadge, SeverityBadge } from '../../components/StatusBadge';

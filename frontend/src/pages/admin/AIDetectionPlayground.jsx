@@ -19,7 +19,10 @@ import {
   ChevronDown,
   ChevronUp,
   Image as ImageIcon,
-  Ruler
+  Ruler,
+  Activity,
+  Flame,
+  Eye
 } from 'lucide-react';
 import { aiAPI, incidentsAPI } from '../../services/api';
 
