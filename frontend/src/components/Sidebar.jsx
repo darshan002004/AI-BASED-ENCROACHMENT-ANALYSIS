@@ -18,7 +18,8 @@ import {
   Cpu,
   Database,
   ClipboardList,
-  Clock
+  Clock,
+  Bug
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -65,6 +66,7 @@ export default function Sidebar({ activeTab, setActiveTab, mobileOpen = false, s
     { id: 'model-performance', key: 'modelPerformance', label: 'AI Model Benchmarks', icon: Cpu },
     { id: 'feedback-dataset', key: 'feedbackDataset', label: 'Model Feedback Dataset', icon: Database },
     { id: 'audit-logs', key: 'auditLogs', label: 'Audit Trail & Security', icon: ClipboardList },
+    { id: 'ai-bugfix', key: 'aiBugfix', label: 'AI Script & BugFix Studio', icon: Bug },
     { id: 'reports', key: 'reports', label: 'Municipal Reports', icon: FileText },
     { id: 'users', key: 'users', label: 'User Directory', icon: Users },
     { id: 'officers', key: 'officers', label: 'Officer Roster', icon: UserCheck },

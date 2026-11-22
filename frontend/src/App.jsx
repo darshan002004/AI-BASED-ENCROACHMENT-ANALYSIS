@@ -26,6 +26,7 @@ import AreaComparisonPage from './pages/admin/AreaComparisonPage';
 import AIModelPerformancePage from './pages/admin/AIModelPerformancePage';
 import AIFeedbackPage from './pages/admin/AIFeedbackPage';
 import AuditLogPage from './pages/admin/AuditLogPage';
+import AIBugFixPage from './pages/admin/AIBugFixPage';
 import CitizenDashboard from './pages/citizen/CitizenDashboard';
 import ReportEncroachment from './pages/citizen/ReportEncroachment';
 import MyReports from './pages/citizen/MyReports';
@@ -39,7 +40,7 @@ const ROLE_PERMISSIONS = {
   admin: [
     'dashboard', 'incidents', 'incident-detail', 'ai-detection', 'sla-management',
     'public-transparency', 'map', 'analytics', 'area-comparison', 'model-performance',
-    'feedback-dataset', 'audit-logs', 'reports', 'users', 'officers', 'settings',
+    'feedback-dataset', 'audit-logs', 'ai-bugfix', 'reports', 'users', 'officers', 'settings',
     'inspection', 'hotspots', 'citizen-dashboard', 'citizen-report', 'my-reports',
     'officer-dashboard'
   ],
@@ -255,6 +256,7 @@ function AppContent() {
       case 'model-performance': return 'AI Model Performance';
       case 'feedback-dataset': return 'AI Feedback Dataset';
       case 'audit-logs': return 'Audit Trail & Governance Logs';
+      case 'ai-bugfix': return 'AI Script & BugFix Studio';
       case 'reports': return 'Report Generation';
       case 'users': return 'User Directory';
       case 'officers': return 'Field Officer Roster';
@@ -366,6 +368,10 @@ function AppContent() {
 
               {activeTab === 'audit-logs' && (
                 <AuditLogPage />
+              )}
+
+              {activeTab === 'ai-bugfix' && (
+                <AIBugFixPage />
               )}
 
               {activeTab === 'hotspots' && (

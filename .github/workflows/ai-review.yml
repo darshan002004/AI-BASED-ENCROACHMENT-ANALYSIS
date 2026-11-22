@@ -1,0 +1,54 @@
+name: AI Code Review on Push
+
+on:
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Identify Last Changed File
+        id: detect_file
+        run: |
+          CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          LAST_FILE=$(echo "$CHANGED_FILES" | tail -n 1)
+          echo "last_file=$LAST_FILE" >> $GITHUB_OUTPUT
+
+      - name: Read File Safely
+        env:
+          TARGET_FILE: ${{ steps.detect_file.outputs.last_file }}
+        run: |
+          if [ -n "$TARGET_FILE" ] && [ -f "$TARGET_FILE" ]; then
+            cat "$TARGET_FILE" > filecontent.txt
+          else
+            echo "No text file detected or file deleted" > filecontent.txt
+          fi
+
+      - name: Dispatch AI Code Review Payload
+        env:
+          USER_NAME: ${{ github.actor }}
+          COMMIT_SHA: ${{ github.sha }}
+          BACKEND_URL: "https://bugfix-backend-cl57.vercel.app"
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          COMMITTER_EMAIL=$(git log -1 --pretty=format:'%ae')
+          CODE_CONTENT=$(cat filecontent.txt)
+
+          JSON_PAYLOAD=$(jq -n \
+            --arg code "$CODE_CONTENT" \
+            --arg user "$USER_NAME" \
+            --arg commitId "$COMMIT_SHA" \
+            --arg commitMsg "$COMMIT_MSG" \
+            --arg email "$COMMITTER_EMAIL" \
+            '{code: $code, username: $user, commit_id: $commitId, commit_msg: $commitMsg, email: $email}')
+
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d "$JSON_PAYLOAD" \
+            "$BACKEND_URL/api/analyze"
